@@ -21,12 +21,7 @@
         ar=rep.split("\n").map((n)=>{return n.split("|")})
         // console.log(ar)
         thang= Number(ar[0][6].replace('KẾT QUẢ THỰC HIỆN THÁNG ','').replace(' S.LƯỢNG','').trim())
-        if (thang ==1){thang=1}
-        if (thang ==4){thang=4}
-        if (thang ==7){thang=7}
-        if (thang ==10){thang=10}
-        // console.log(thang)
-        
+       // console.log(thang)
         for (i=1; i<4 ;i++){
           document.getElementById("T"+i).innerHTML='THÁNG '+ (thang+i-1);
         }
