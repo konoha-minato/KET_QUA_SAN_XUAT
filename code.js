@@ -25,13 +25,8 @@
       .then(rep => {
         //Remove additional text and extract only JSON:
         // const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-        ar=rep.split("\n").map((n)=>{
-          return n.split(",").map((n)=>{
-            if (n=='""'){return n=''}
-            return n.replace('"','').replace('"','')
-          })
-        })
-        // console.log(string_data)
+        rep=rep.replace(/","/g,'|').replace(/"/g,'|')
+        ar=rep.split("\n").map((n)=>{return n.split("|")})
         console.log(ar)
         var cell='<td style="text-align: center;">value</td>'
         var line='<tr style="text-align: center;font-size: 1em;">cell</tr>'
@@ -39,8 +34,8 @@
         for (i=1;i<ar.length;i++){
           // console.log(ar[i])
           row = table.insertRow(-1);
-          for(j=0;j<21;j++){
-            if (j!=1){row_data+=cell.replace('value',ar[i][j])}
+          for(j=1;j<22;j++){
+            if (j!=2){row_data+=cell.replace('value',ar[i][j])}
             else{row_data+=cell.replace('value',ar[i][j]).replace('center','left')}
           }
           row.innerHTML=line.replace('cell',row_data)
