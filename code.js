@@ -1,17 +1,3 @@
-//g bùn
-// var x=screen.width
-// var y=screen.height
-// var k_hso,k_naoh
-// var data_mau={}
-// set_mau_g()
-// chiphi_sx()
-// document.getElementById("myframe").width = x
-// document.getElementById("myframe").height = y
-// document.getElementById('md_pilot').checked = false
-// document.getElementById('md_sx').checked = true
-// var num_fix=0
-// //setup start
-// var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
   // const sheetId = '1-X4iFWGHBIXGQkTXtrzWUU8F8xnRV2H-4fGmRDWKFeg';
   const sheetId = '1EFMIoKBJXv52lMpTFd4Mn3usEqTZAJmp';
@@ -27,33 +13,34 @@
   // const output = document.querySelector('.output')
   
   function init() {
-    var ar,i,j
-      fetch(base)
-          .then(res => res.text())
-          .then(rep => {
-              //Remove additional text and extract only JSON:
-              // const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-              ar=rep.split("\n").map((n)=>{return n.split(",")})
-              console.log(ar)
-              var cell='<td>value</td>'
-              var line='<tr style="text-align: center;font-size: 1em;">cell</tr>'
-              console.log(ar.length)
-              var row_data, string_data;
-              for (i=0;i<ar.length;i++){
-                // console.log(ar[i])
-                for(j=0;j<7;j++){
-                  // row_data+=cell.replace(ar[i][j],'value')
-                  if (ar[i][j]=='""'){ar[i][j]=''}
-                  row_data+=cell.replace('value',ar[i][j]).replace('"','').replace('"','')
-                }
-                string_data+=line.replace('cell',row_data)
-                row_data=''
-              }
-              // console.log(string_data)
-              document.getElementById("bang_chinh").innerHTML=string_data
+    var ar,i,j,row;
+    var table = document.getElementById("bang_chinh");
+    fetch(base)
+        .then(res => res.text())
+        .then(rep => {
+          //Remove additional text and extract only JSON:
+          // const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+          ar=rep.split("\n").map((n)=>{return n.split(",")})
+          // console.log(string_data)
+          // document.getElementById("bang_chinh").innerHTML=string_data
 
-          })
-
+    console.log(ar)
+    var cell='<td>value</td>'
+    var line='<tr style="text-align: center;font-size: 1em;">cell</tr>'
+    console.log(ar.length)
+    var row_data, string_data;
+    for (i=0;i<ar.length;i++){
+      // console.log(ar[i])
+      row = table.insertRow(-1);
+      for(j=0;j<36;j++){
+        // row_data+=cell.replace(ar[i][j],'value')
+        if (ar[i][j]=='""'){ar[i][j]=''}
+        row_data+=cell.replace('value',ar[i][j]).replace('"','').replace('"','')
+      }
+      row.innerHTML=line.replace('cell',row_data)
+      row_data=''      
+    }
+        })
   }
   // function processRows(json) {
   //     json.forEach((row) => {
