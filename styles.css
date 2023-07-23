@@ -1,18 +1,11 @@
 .head{
-    max-height: 150px;
-    display: flex;
-    overflow-x: auto;
-}
-
-.head::-webkit-scrollbar{
-    width: 0;
-}
-.head .item{
-    min-width: 100px;
-    height: 100;
-    padding: 10px;
+    width: 100%;
     text-align: center;
-    background-color: aqua;
+    background-color: azure; 
+    color: brown;
+    font-size:4em;
+    font-weight: bolder; 
+    float: left;
 }
 .hc_head{
     text-align: center;
