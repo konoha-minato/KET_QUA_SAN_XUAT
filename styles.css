@@ -7,12 +7,6 @@
     font-weight: bolder; 
     float: left;
 }
-.hc_head{
-    text-align: center;
-    background-color: aqua;
-    border-width: 2px;
-    border-color: brown;
-}
 td{
     padding: 5px;
     border-style: groove; 
