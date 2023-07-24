@@ -26,7 +26,7 @@
           document.getElementById("T"+i).innerHTML='THÁNG '+ (thang+i-1);
         }
         var cell='<td style="text-align: center;">value</td>'
-        var line='<tr style="text-align: center;font-size: 0.5em;font-weight: bolder;padding-top: 10px;padding-bottom: 10px;">cell</tr>'
+        var line='<tr style="text-align: center;font-size: 0.5em;font-weight: bolder;padding-top: 5px;padding-bottom: 5px;">cell</tr>'
         var row_data=''
         for (i=1;i<ar.length;i++){
           // console.log(ar[i])
