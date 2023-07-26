@@ -20,11 +20,11 @@
         rep=rep.replace(/","/g,'|').replace(/"/g,'|')
         ar=rep.split("\n").map((n)=>{return n.split("|")})
         // console.log(ar)
-        thang= Number(ar[0][6].replace('KẾT QUẢ THỰC HIỆN THÁNG ','').replace(' S.LƯỢNG','').trim())
+        // thang= Number(ar[0][6].replace('KẾT QUẢ THỰC HIỆN THÁNG ','').replace(' S.LƯỢNG','').trim())
        // console.log(thang)
-        for (i=1; i<4 ;i++){
-          document.getElementById("T"+i).innerHTML='THÁNG '+ (thang+i-1);
-        }
+        // for (i=1; i<4 ;i++){
+        //   document.getElementById("T"+i).innerHTML='THÁNG '+ (thang+i-1);
+        // }
         var cell='<td style="text-align: center;padding-top: 6px;padding-bottom: 6px;">value</td>'
         var line='<tr style="text-align:center;font-size: 0.5em;font-weight: bolder;">cell</tr>'
         var row_data=''
@@ -32,6 +32,7 @@
           // console.log(ar[i])
           row = table.insertRow(-1);
           for(j=1;j<22;j++){
+            if(j>=5 && j<=10){continue;}
             if (j!=2){row_data+=cell.replace('value',ar[i][j])}
             else{row_data+=cell.replace('value',ar[i][j]).replace('center','left')}
           }
