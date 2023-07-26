@@ -32,7 +32,7 @@
           // console.log(ar[i])
           row = table.insertRow(-1);
           for(j=1;j<22;j++){
-            if(j>=5 && j<=10){continue;}
+            if(j>=6 && j<=11){continue;}
             if (j!=2){row_data+=cell.replace('value',ar[i][j])}
             else{row_data+=cell.replace('value',ar[i][j]).replace('center','left')}
           }
