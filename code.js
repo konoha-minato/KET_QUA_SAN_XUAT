@@ -1,7 +1,7 @@
-  const sheetId = '1GOSlI2StWgksh4xyB3_ppPtFtepYJZeCZkA9asNjOx8';
-  // const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
-  const sheetName = 'Trang tính1';
-  const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
+const sheetId = '1GOSlI2StWgksh4xyB3_ppPtFtepYJZeCZkA9asNjOx8';
+// const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
+const sheetName = 'Trang tính1';
+const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
   // const query = encodeURIComponent('Select *')
   // const url = `${base}&sheet=${sheetName}&tq=${query}`
