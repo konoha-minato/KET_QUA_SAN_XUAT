@@ -19,6 +19,11 @@ const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:
         // const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
         rep=rep.replace(/","/g,'|').replace(/"/g,'|')
         ar=rep.split("\n").map((n)=>{return n.split("|")})
+        ar[6][5]= '13,26±0,5'
+        ar[8][5]='≤ 7,0'
+        ar[9][5]='≥ 25,64'
+        ar[10][5]='≥ 58,98'
+
         // console.log(ar)
         // thang= Number(ar[0][6].replace('KẾT QUẢ THỰC HIỆN THÁNG ','').replace(' S.LƯỢNG','').trim())
        // console.log(thang)
