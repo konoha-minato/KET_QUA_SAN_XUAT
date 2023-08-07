@@ -18,14 +18,15 @@ const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:
       .then(rep => {
         //Remove additional text and extract only JSON:
         // const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+
+        console.log(rep)
         rep=rep.replace(/","/g,'|').replace(/"/g,'|')
         ar=rep.split("\n").map((n)=>{return n.split("|")})
         // ar[6][5]= '13,26±0,5'
         // ar[8][5]='≤ 7,0'
         // ar[9][5]='≥ 25,64'
         // ar[10][5]='≥ 58,98'
-          console.log(rep)
-        var cell='<td style="text-align: center;padding-top: 3px;padding-bottom: 3px;">value</td>'
+        var cell='<td style="text-align: center;padding-top: 6px;padding-bottom: 6px;">value</td>'
         var line='<tr style="text-align:center;font-size: 0.5em;font-weight: bolder;">cell</tr>'
         var row_data=''
         for (i=1;i<ar.length;i++){
