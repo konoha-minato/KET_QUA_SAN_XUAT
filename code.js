@@ -1,11 +1,12 @@
 const sheetId = '1-710ftScS9_1iyfHAPEedO_vrqTNOf7B';
 const time = new Date()
+var sheetName
 // const end_month= new Date(time.getFullYear(), time.getMonth() + 1, 0).getDate();
 if (time.getDate()==1){
-  const sheetName = 'T' + (time.getMonth());
+  sheetName = 'T' + (time.getMonth());
 }
 else{
-const sheetName = 'T' + (time.getMonth()+1);
+  sheetName = 'T' + (time.getMonth()+1);
 }
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
