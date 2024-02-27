@@ -66,6 +66,9 @@ tr td:last-child {
     border-width: 2px;
     border-color: brown;
 }
+tr{
+    Line-height: 30px;
+}
 td{
     padding-top: 5px;
     border-style: groove; 
