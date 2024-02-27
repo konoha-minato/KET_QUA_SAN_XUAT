@@ -1,6 +1,7 @@
 const sheetId = '1-710ftScS9_1iyfHAPEedO_vrqTNOf7B';
 const time = new Date()
 var sheetName
+
 // const end_month= new Date(time.getFullYear(), time.getMonth() + 1, 0).getDate();
 if (time.getDate()==1){
   sheetName = 'T' + (time.getMonth());
@@ -8,6 +9,10 @@ if (time.getDate()==1){
 else{
   sheetName = 'T' + (time.getMonth()+1);
 }
+document.getElementById("thang").innerText=time.getMonth()+1
+document.getElementById("date").innerText=time.getDate()-1
+document.getElementById("date2").innerText=time.getDate()-1
+document.getElementById("date3").innerText=time.getDate()
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${sheetName}`;
 
   const data = []
@@ -17,10 +22,6 @@ const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:
 function init() {
   var ar,i,j,row,thang,ngay;
   var table = document.getElementById("bang_chinh");
-  ngay= new Date
-  document.getElementById("hom_truoc").innerText=ngay.getDate()-1
-  document.getElementById("hom_truoc1").innerText=ngay.getDate()-1
-  document.getElementById("hom_nay").innerText=ngay.getDate()
   
   fetch(base)
     .then(res => res.text())

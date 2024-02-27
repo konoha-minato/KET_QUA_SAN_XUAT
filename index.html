@@ -6,27 +6,442 @@
 </head>
 <body style="font-size:15pt; font-family: Verdana; float: left;width: 100%;">
   <div style="padding: 1px;padding-right: 10px; float:left;">
-    <table  id="bang_chinh" class="bang_chinh">
-    <tr style="font-weight:bolder;text-align:center;color: red;">
+    <table id="bang_chinh" class="bang_chinh">
+    <colgroup>
+      <col width="2%">
+      <col width="12%">
+      <col width="2%"> 
+      <col width="6%"> 
+      <col width="6%">
+      <col width="6%">
+      <col width="7%">
+      <col width="10%">
+      <col width="8%">
+      <col width="2%">
+      <col width="10%">
+      <col width="6%">
+      <col width="10%">
+      <col width="10%">
+    </colgroup>  
+    <tr class="sub row" >
       <td rowspan="2">STT</td>
-      <td rowspan="2">CHỈ TIÊU</td>
+      <td rowspan="2">NỘI DUNG</td>
       <td rowspan="2">ĐVT</td>
-      <td colspan="6">KẾ HOẠCH</td>
+      <td colspan="6">KẾT QUẢ SẢN XUẤT - THÁNG <a id="thang"></a></td>
       <td rowspan="2">STT</td>
       <td rowspan="2">CHỈ TIÊU</td>
       <td rowspan="2">KẾ HOẠCH</td>
       <td rowspan="2">THỰC HIỆN</td>
       <td rowspan="2">GHI CHÚ</td>
     </tr>
-    <tr style="font-weight:bolder;text-align:center;color: red;">
-      <td >Ca 1</td>
-      <td >Ca 2</td>
-      <td >Ca 3</td>
-      <td >Cộng ngày <span id="hom_truoc"></span></td>
-      <td >đến ngày <span id="hom_truoc1"></span></td>
-      <td >Ca 1-<span id="hom_nay"></span></td>
+    <tr class="sub row">
+      <td>Ca 1</td>
+      <td>Ca 2</td>
+      <td>Ca 3</td>
+      <td>Cộng ngày <a id="date"></a></td>
+      <td>Đến ngày <a id="date2"></a></td>
+      <td>Ca 1- <a id="date3"></a></td>
     </tr>
-    <!-- <tr style="padding-top: 5px;padding-bottom: 5px; "> -->
+    <tr>
+      <td>1</td>
+      <td style="text-align:left">Trạm bơm Tuần Hoàn</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_1-1" onkeydown="save(this,'bth')"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_1-2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_1-3"></td>
+      <td style="text-align:center" id="log_1-day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="14" id="log_1sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_1c1"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Q3 nhập kho TG</td>
+      <td></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_11"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_12"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td style="text-align:left">Trạm bơm hồ phụ</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_2-1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_2-2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_2-3"></td>
+      <td style="text-align:center" id="log_1-day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="14" id="log_2sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_2c1"></td>
+      <td>2</td>
+      <td style="text-align:left">HL Q3 vào tuyển</td>
+      <td>13,26±0,5</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_11"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="log_12"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td style="text-align:left">Bơm tuần hoàn 2</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td style="text-align:center" id="log_1-day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="14" id="log_2sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>3</td>
+      <td style="text-align:left">N.độ bùn vào tuyển</td>
+      <td>38 ÷ 42</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td style="text-align:left">Băng tải xích 102</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Quặng tinh</td>
+      <td>30,5</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td style="text-align:left">Băng tải xích 302</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Quặng thải</td>
+      <td>7</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td style="text-align:left">Máy nghiền 1</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Quặng lọc</td>
+      <td>30,5</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td style="text-align:left">Máy nghiền 2</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Độ ẩm Quặng lọc</td>
+      <td>15%</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td style="text-align:left">Hệ thống tuyến</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Thu hoạch SP</td>
+      <td>≥ 25,30</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td style="text-align:left">Quặng 3 nhập tr. Gian</td>
+      <td>tấn</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Thực thu P2O5</td>
+      <td>≥ 58,18</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td style="text-align:left">Quặng 3 vào tuyển</td>
+      <td>tấn</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">SP.T.gian P2O5</td>
+      <td>18,33</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td style="text-align:left">Cấp hạt -0,074 mm</td>
+      <td>%</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Quặng 3 nhập kho</td>
+      <td>Hàm lượng</td>
+      <td>Xe/tấn</td>
+      <td>Cộng</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td style="text-align:left">Quặng tinh sản xuất</td>
+      <td>mẻ/tấn</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Khai trường 19</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td style="text-align:left">HL Quặng lọc (P2O5)</td>
+      <td>P2O5</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Kho lưu 21</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td style="text-align:left">Quặng tinh bơm hồ 1</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left"style="text-align:left">Khai trường 19</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td style="text-align:left">Quặng tinh bơm hồ 5</td>
+      <td>Giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Kho lưu</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td style="text-align:left">Thuốc tuyển</td>
+      <td>lít/giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Q3 nhập kho TG</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td style="text-align:left">Thủy tinh lỏng</td>
+      <td>lít/giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Mất điện lưới</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td style="text-align:left">Xút</td>
+      <td>lít/giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Theo kế hoạch</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td style="text-align:left">Sunfat sắt</td>
+      <td>lít/giờ</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">Đột xuất</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td style="text-align:left">Nước Bơm T.H</td>
+      <td>m3</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">KH sửa chữa QIII</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td style="text-align:left">Nước Bơm Hồ 2</td>
+      <td>m3</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">BD Máy xúc 890H</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td style="text-align:left">Quặng tinh xuất <input class="f_size_sx" style="width:25%" type="text" maxlength="9" id="bth_c1"></td>
+      <td>tấn /xe</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">BD Máy gạt</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td style="text-align:left">Quặng tinh xuất <input class="f_size_sx" style="width:25%" type="text" maxlength="9" id="bth_c1"></td>
+      <td>tấn /xe</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">BD Xe Santafe</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td style="text-align:left">Quặng tinh xuất <input class="f_size_sx" style="width:25%" type="text" maxlength="9" id="bth_c1"></td>
+      <td>tấn /xe</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">BD Xe Mazda BT50</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td style="text-align:left">Quặng tinh xuất <input class="f_size_sx" style="width:25%" type="text" maxlength="9" id="bth_c1"></td>
+      <td>tấn /xe</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c2"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c1y"></td>
+      <td>1</td>
+      <td style="text-align:left">HL Q3 nhập kho TG</td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_c3"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_day"></td>
+      <td><input class="f_size_sx" type="text" maxlength="9" id="bth_sum"></td>
+    </tr>
     </table>
   </div>
   <script src="code.js"></script>
